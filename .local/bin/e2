@@ -1,0 +1,32 @@
+#!/bin/bash
+
+PLUGINS_DIR="${HOME}/.local/share/e2/plugins"
+
+echo "Hello, e2"
+
+if [[ "${#}" -lt 1 ]]; then
+	echo >&2 "Usage: ${0} <SUBCOMMAND>"
+	exit 1
+fi
+
+subcommand="${1}"
+shift
+
+plugin_file="${PLUGINS_DIR}/${subcommand}"
+if [[ -x "${plugin_file}" ]]; then
+	"${plugin_file}" "${@}"
+	exit_code=$?
+	exit ${exit_code}
+fi
+
+if [[ -f "${plugin_file}" ]]; then
+	echo >&2 "Found a plugin file that is not executable."
+	exit 3
+fi
+
+case "${subcommand}" in
+	*)
+		echo >&2 "<SUBCOMMAND> ${subcommand} not found"
+		exit 2
+		;;
+esac
