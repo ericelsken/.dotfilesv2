@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+# Try to make this script shell agnostic, though the rest of the repo scripts
+# may not be.
+
+REPO_URL="https://github.com/ericelsken/.dotfilesv2"
+
+if ! which git > /dev/null; then
+	echo >&2 "Cannot find git. Install then re-run this script."
+	exit 1
+fi
+
+dest="${HOME}/.dotfiles"
+
+if [ -d "${dest}/.git" ]; then
+	echo >&2 "Installation destination ${dest} is already a git repository. Not doing anything. Bye."
+	exit 0
+fi
+
+if [ -e "${dest}" ]; then
+	echo >&2 "Installation destination ${dest} exists but is not a git repository."
+	exit 2
+fi
+
+git clone "${REPO_URL}" "${dest}"
