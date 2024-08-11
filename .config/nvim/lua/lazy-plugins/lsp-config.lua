@@ -24,7 +24,7 @@ local M = {
 
 			lspconfig.gopls.setup({})
 			lspconfig.lua_ls.setup({})
-			lspconfig.terraformls.setup({})
+			-- lspconfig.terraformls.setup({})
 		end,
 	},
 }

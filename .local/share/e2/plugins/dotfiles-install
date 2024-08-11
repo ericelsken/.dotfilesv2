@@ -16,9 +16,12 @@ if [ -d "${dest}/.git" ]; then
 	exit 0
 fi
 
-if [ -e "${dest}" ]; then
+if [ -e "${dest}" ] && [ ! -d "${dest}/.git" ]; then
 	echo >&2 "Installation destination ${dest} exists but is not a git repository."
-	exit 2
+	exit 1
 fi
+
+# if [ -d "${dest}/.git" ]; then
+# fi
 
 git clone "${REPO_URL}" "${dest}"
