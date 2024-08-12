@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+
 # Try to make this script shell agnostic, though the rest of the repo scripts
 # may not be.
 
