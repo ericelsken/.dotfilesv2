@@ -1,0 +1,22 @@
+[alias]
+	a = add
+	b = branch
+	c = commit
+	co = checkout
+	d = diff
+	du = diff --name-only --diff-filter=U
+	l1 = log -n 1
+	m = merge
+	pl = pull
+	ph = push
+	rb = rebase
+	s = status
+	si = switch
+[user]
+	email = eric.elsken@gmail.com
+	name = Eric Elsken
+[init]
+	defaultBranch = main
+[commit]
+	template = /home/ericelsken/.config/git/gitmessage
+
