@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export AWS_CONFIG_FILE=/home/ericelsken/.config/aws/config
-export AWS_SHARED_CREDENTIALS_FILE=/home/ericelsken/.config/aws/credentials
-

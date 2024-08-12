@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 # User specific environment
 if ! [[ "$PATH" =~ "${HOME}/.local/bin" ]]; then
     export PATH="${HOME}/.local/bin:${PATH}"
@@ -32,3 +38,12 @@ fi
 unset bash_config_dir
 unset bashrc_dir
 unset bashrc_dir_self
+
+# RUSTUP
+# . "$HOME/.cargo/env"
+
+
+# NVM
+# export NVM_DIR="$HOME/.config/nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

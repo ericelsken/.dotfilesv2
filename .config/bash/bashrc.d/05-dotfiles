@@ -1,3 +1,0 @@
-#!/bin/bash
-
-alias eeg='git --git-dir=${HOME}/.config/dotfiles/ --work-tree=${HOME}'

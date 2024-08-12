@@ -6,7 +6,8 @@ alias myip="curl https://httpbin.org/ip 2> /dev/null | jq -r .origin"
 
 alias gbclear="git branch --merged | egrep -v '(^\*|main|develop|master)' | xargs git branch -d"
 
-alias dfg='git --git-dir=${HOME}/.config/dotfiles --work-tree=${HOME}'
+alias tma='tmux attach-session -t '
 
+alias l='ls -CF'
 alias la='ls -la'
-
+alias ll='ls -alF'
