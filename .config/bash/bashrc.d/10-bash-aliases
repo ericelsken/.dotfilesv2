@@ -8,6 +8,7 @@ alias gbclear="git branch --merged | egrep -v '(^\*|main|develop|master)' | xarg
 
 alias tma='tmux attach-session -t '
 
+alias ls='ls --color=auto'
 alias l='ls -CF'
 alias la='ls -la'
 alias ll='ls -alF'
