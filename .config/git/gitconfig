@@ -20,3 +20,5 @@
 [commit]
 	template = /home/ericelsken/.config/git/gitmessage
 
+[push]
+	autoSetupRemote = true
