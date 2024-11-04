@@ -5,7 +5,12 @@ local M = {
 			local trouble = require("trouble")
 			trouble.setup({})
 
-			vim.keymap.set("n", "<Leader>X", trouble.toggle, { desc = "<Leader>[X] for Trouble" })
+			vim.keymap.set(
+				"n",
+				"<Leader>X",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				{ desc = "<Leader>[X] for Trouble" }
+			)
 		end,
 	},
 }
