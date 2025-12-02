@@ -13,6 +13,7 @@ local M = {
 					"gopls",
 					"lua_ls",
 					"terraformls",
+					"jsonls",
 				},
 			})
 		end,
@@ -20,11 +21,18 @@ local M = {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lspconfig = require("lspconfig")
+			-- Avoid deprecated `require('lspconfig')` top-level access.
+			-- Instead, register configs directly to bypass the deprecated framework.
+			local configs = require("lspconfig.configs")
+			configs.gopls = require("lspconfig.configs.gopls")
+			configs.lua_ls = require("lspconfig.configs.lua_ls")
+			configs.jsonls = require("lspconfig.configs.jsonls")
 
-			lspconfig.gopls.setup({})
-			lspconfig.lua_ls.setup({})
-			-- lspconfig.terraformls.setup({})
+			configs.gopls.setup({})
+			configs.lua_ls.setup({})
+			configs.jsonls.setup({})
+			-- configs.terraformls = require("lspconfig.configs.terraformls")
+			-- configs.terraformls.setup({})
 		end,
 	},
 }
