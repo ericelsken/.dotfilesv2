@@ -1,1 +1,3 @@
-.config/git/gitconfig
+[# Canonical config lives at XDG path; include it here.]
+[include]
+	path = ~/.config/git/gitconfig

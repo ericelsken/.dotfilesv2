@@ -26,3 +26,13 @@ fi
 # fi
 
 git clone "${REPO_URL}" "${dest}"
+
+# Optional: After you reacquaint yourself with the repo, you can
+# uncomment the following lines to immediately stow everything into $HOME.
+# This uses the stow plugin directly (no dependency on e2 being stowed yet).
+#
+# if command -v stow >/dev/null 2>&1; then
+# 	sh "${dest}/.local/share/e2/plugins/dotfiles-stow"
+# else
+# 	echo >&2 "stow not found; install it, then run: sh ${dest}/.local/share/e2/plugins/dotfiles-stow"
+# fi

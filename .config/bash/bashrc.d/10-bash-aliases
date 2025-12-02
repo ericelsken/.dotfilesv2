@@ -14,3 +14,6 @@ alias ls='ls --color=auto'
 alias l='ls -CF'
 alias la='ls -la'
 alias ll='ls -alF'
+
+# Dotfiles stow helper
+alias dst='e2 dotfiles-stow'

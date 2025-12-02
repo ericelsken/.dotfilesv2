@@ -17,4 +17,3 @@ export HISTIGNORE="${HISTIGNORE}:ls:ls -la"
 export HISTIGNORE="${HISTIGNORE}:git s:git c:git co:git b:git si:"
 export HISTIGNORE="${HISTIGNORE}:sudo su -"
 export HISTIGNORE="${HISTIGNORE}:exit:clear"
-
