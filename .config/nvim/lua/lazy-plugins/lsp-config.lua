@@ -11,6 +11,7 @@ local M = {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"gopls",
+					"jsonls",
 					"lua_ls",
 					"terraformls",
 				},
@@ -20,11 +21,16 @@ local M = {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lspconfig = require("lspconfig")
-
-			lspconfig.gopls.setup({})
-			lspconfig.lua_ls.setup({})
-			-- lspconfig.terraformls.setup({})
+			-- New style (Nvim 0.11+): use vim.lsp.config + vim.lsp.enable
+			-- nvim-lspconfig ships server defaults in its `lsp/` directory,
+			-- which vim.lsp.config() automatically discovers.
+			local lsp = vim.lsp
+			-- If you want to override defaults, call lsp.config('<name>', { ... }) first.
+			-- Then enable filetype-based activation of each server:
+			lsp.enable("gopls")
+			lsp.enable("jsonls")
+			lsp.enable("lua_ls")
+			lsp.enable("terraformls")
 		end,
 	},
 }
