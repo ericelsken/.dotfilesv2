@@ -27,7 +27,7 @@ fi
 # Host specific bashrc.d
 bashrc_dir_self="${bash_config_dir}/self.d"
 if [[ -d ${bashrc_dir_self} ]]; then
-        for rc in ${bashrc_dir_self}/* ; do
+		for rc in ${bashrc_dir_self}/* ; do
                 if [[ -f "$rc" ]]; then
                         source "$rc"
                 fi
