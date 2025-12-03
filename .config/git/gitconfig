@@ -1,25 +1,34 @@
 [alias]
 	a = add
+	aa = add --all
 	b = branch
 	c = commit
+	ca = commit -a
 	co = checkout
 	d = diff
 	du = diff --name-only --diff-filter=U
 	l1 = log -n 1
 	m = merge
-	pl = pull
 	ph = push
+	pl = pull
 	rb = rebase
-	s = status
 	si = switch
+	sm = submodule
+	s = status
+
 [user]
-	email = eric.elsken@gmail.com
+	email = 5034872+ericelsken@users.noreply.github.com
 	name = Eric Elsken
+
 [init]
 	defaultBranch = main
+
 [commit]
 	template = /home/ericelsken/.config/git/gitmessage
 
 [push]
 	autoSetupRemote = true
 	default = simple
+
+[include]
+	path = ~/.config/git/self.d/gitconfig
