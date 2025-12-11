@@ -1,9 +1,9 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # Try to make this script shell agnostic, though the rest of the repo scripts
 # may not be.
 
-REPO_URL="https://github.com/ericelsken/.dotfilesv2"
+REPO_URL="https://github.com/ericelsken/.dotfiles"
 
 if ! which git > /dev/null; then
 	echo >&2 "Cannot find git. Install then re-run this script."
