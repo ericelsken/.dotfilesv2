@@ -13,12 +13,15 @@
 	s = status
 	si = switch
 [user]
-	email = eric.elsken@gmail.com
+	email = 5034872+ericelsken@users.noreply.github.com
 	name = Eric Elsken
+	signingkey = 5E767CBADC7BB3DE
 [init]
 	defaultBranch = main
 [commit]
 	template = /home/ericelsken/.config/git/gitmessage
-
+	gpgsign = true
 [push]
 	autoSetupRemote = true
+[tag]
+	gpgSign = true
