@@ -1,0 +1,9 @@
+#!/bin/bash
+
+_mise_path="${HOME}/.local/bin/mise"
+
+if command -v "${_mise_path}" >/dev/null 2>&1 ; then
+	eval "$("${_mise_path}" activate bash)"
+fi
+
+unset _mise_path
