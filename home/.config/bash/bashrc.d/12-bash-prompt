@@ -110,6 +110,7 @@ _e2_update_prompt() {
 	# --
 
 	PS1="\[${exit_code_color}\]${STATUS_GLYPH} "
+	PS1+="\[${RESET}\]"
 	PS1+="\[${userhostname_color}\][${user}@${hostname}]"
 	PS1+="\[${RESET}\] "
 	PS1+="\[${BOLD_BLUE}\]\W"
