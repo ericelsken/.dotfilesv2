@@ -9,6 +9,7 @@ aws-vault = "latest"
 neovim = "latest"
 tree-sitter = "latest"
 usage = "latest"
+opencode = "latest"
 
 [settings]
 

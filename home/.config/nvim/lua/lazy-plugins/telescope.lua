@@ -6,6 +6,9 @@ local M = {
 		config = function()
 			require("telescope").setup({
 				defaults = {
+					preview = {
+						treesitter = false,
+					},
 					mappings = {
 						i = {
 							["<C-k>"] = "move_selection_previous",
