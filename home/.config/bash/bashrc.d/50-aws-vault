@@ -1,3 +1,5 @@
 #!/bin/bash
 
-eval "$(aws-vault --completion-script-bash)"
+if command -v aws-vault >/dev/null 2>&1 ; then
+	eval "$(aws-vault --completion-script-bash)"
+fi

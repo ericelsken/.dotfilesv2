@@ -2,6 +2,10 @@
 
 E2_PLUGINS_DIR="${HOME}/.local/share/e2/plugins"
 
+if ! declare -F _init_completion >/dev/null && [[ -r /usr/share/bash-completion/bash_completion ]]; then
+	source /usr/share/bash-completion/bash_completion
+fi
+
 _e2_completions() {
 	local cur prev words cword
 	_init_completion -n : || return
