@@ -5,6 +5,20 @@ local M = {
 		config = function()
 			require("telescope").setup({
 				defaults = {
+					attach_mappings = function(prompt_bufnr)
+						local dot = vim.fn.getreg(".")
+						local dot_type = vim.fn.getregtype(".")
+
+						vim.api.nvim_create_autocmd("BufWinLeave", {
+							buffer = prompt_bufnr,
+							once = true,
+							callback = function()
+								vim.fn.setreg(".", dot, dot_type)
+							end,
+						})
+
+						return true
+					end,
 					preview = {
 						treesitter = false,
 					},
